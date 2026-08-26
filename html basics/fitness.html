@@ -1,0 +1,440 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Fitness Coach - Login</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #00b894, #00cec9);
+        }
+
+        .container {
+            width: 900px;
+            max-width: 100%;
+            min-height: 560px;
+            display: flex;
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.20);
+        }
+
+        /* LEFT SIDE */
+
+        .left {
+            width: 50%;
+            padding: 50px;
+            background: linear-gradient(135deg, #00b894, #00a884);
+            color: white;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+        }
+
+        .logo-icon {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.18);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 45px;
+            margin-bottom: 25px;
+        }
+
+        .left h1 {
+            font-size: 38px;
+            margin-bottom: 18px;
+        }
+
+        .left h1 span {
+            color: #eafff9;
+        }
+
+        .left p {
+            font-size: 15px;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        .benefits {
+            margin-top: 30px;
+            width: 100%;
+            text-align: left;
+        }
+
+        .benefits p {
+            margin: 12px 0;
+            font-size: 14px;
+        }
+
+        /* RIGHT SIDE */
+
+        .right {
+            width: 50%;
+            padding: 55px 50px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .right h2 {
+            font-size: 32px;
+            color: #222;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .input-box {
+            margin-bottom: 20px;
+        }
+
+        .input-box label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .input-box input {
+            width: 100%;
+            padding: 14px 15px;
+
+            border: 1px solid #ddd;
+            border-radius: 10px;
+
+            outline: none;
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+        .input-box input:focus {
+            border-color: #00b894;
+            box-shadow: 0 0 0 3px rgba(0, 184, 148, 0.12);
+        }
+
+        .options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            margin-bottom: 25px;
+            font-size: 13px;
+        }
+
+        .remember {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            color: #555;
+        }
+
+        .remember input {
+            accent-color: #00b894;
+        }
+
+        .options a {
+            color: #00b894;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .options a:hover {
+            text-decoration: underline;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 14px;
+
+            border: none;
+            border-radius: 10px;
+
+            background: #00b894;
+            color: white;
+
+            font-size: 16px;
+            font-weight: 600;
+
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .login-btn:hover {
+            background: #019875;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(0, 184, 148, 0.25);
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            margin: 25px 0;
+
+            color: #aaa;
+            font-size: 13px;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #ddd;
+        }
+
+        .signup {
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .signup a {
+            color: #00b894;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .signup a:hover {
+            text-decoration: underline;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 768px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .container {
+                flex-direction: column;
+                min-height: auto;
+            }
+
+            .left,
+            .right {
+                width: 100%;
+            }
+
+            .left {
+                padding: 40px 30px;
+            }
+
+            .left h1 {
+                font-size: 30px;
+            }
+
+            .benefits {
+                display: none;
+            }
+
+            .right {
+                padding: 40px 30px;
+            }
+        }
+
+        @media (max-width: 450px) {
+
+            .options {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .right h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- LEFT SECTION -->
+
+        <div class="left">
+
+            <div class="logo-icon">
+                🏋️
+            </div>
+
+            <h1>
+                AI Fitness <span>Coach</span>
+            </h1>
+
+            <p>
+                Your intelligent fitness companion for achieving
+                healthier habits and reaching your fitness goals.
+            </p>
+
+            <div class="benefits">
+
+                <p>✓ Personalized Workout Plans</p>
+
+                <p>✓ Smart Diet Recommendations</p>
+
+                <p>✓ BMI & Calorie Analysis</p>
+
+                <p>✓ Fitness Progress Tracking</p>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SECTION -->
+
+        <div class="right">
+
+            <h2>Welcome Back!</h2>
+
+            <p class="subtitle">
+                Login to continue your fitness journey.
+            </p>
+
+            <form id="loginForm">
+
+                <div class="input-box">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-box">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="options">
+
+                    <label class="remember">
+
+                        <input type="checkbox">
+
+                        Remember Me
+
+                    </label>
+
+                    <a href="#">
+                        Forgot Password?
+                    </a>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="login-btn"
+                >
+                    Login
+                </button>
+
+            </form>
+
+
+            <div class="divider">
+                OR
+            </div>
+
+
+            <div class="signup">
+
+                Don't have an account?
+
+                <a href="signup.html">
+                    Create Account
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            if (email && password) {
+
+                alert("Login successful!");
+
+                // Later connect this to your backend
+                // window.location.href = "dashboard.html";
+
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
+```
