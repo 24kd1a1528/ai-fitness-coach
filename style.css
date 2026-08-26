@@ -1,0 +1,1119 @@
+/* =========================================================
+   AI FITNESS COACH - DASHBOARD STYLE
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #f5f7fb;
+    color: #172033;
+
+    line-height: 1.6;
+}
+
+button,
+input,
+select {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 16px 7%;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-bottom: 1px solid #e5e7eb;
+
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+
+    backdrop-filter: blur(12px);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    color: #172554;
+
+    font-size: 21px;
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #475569;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: 0.25s;
+}
+
+.nav-links a:hover {
+    color: #2563eb;
+}
+
+.nav-links button {
+    border: none;
+
+    padding: 9px 17px;
+
+    border-radius: 8px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: 0.25s;
+}
+
+.nav-links button:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 560px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 80px 7%;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(96, 165, 250, 0.35),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #eff6ff,
+            #dbeafe,
+            #ffffff
+        );
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.hero-badge {
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    padding: 8px 15px;
+
+    border-radius: 30px;
+
+    background: #dbeafe;
+
+    color: #1d4ed8;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.hero h1 {
+    margin-bottom: 20px;
+
+    color: #172554;
+
+    font-size: clamp(38px, 6vw, 64px);
+
+    line-height: 1.08;
+
+    font-weight: 800;
+}
+
+.hero p {
+    max-width: 650px;
+
+    margin: 0 auto 32px;
+
+    color: #64748b;
+
+    font-size: 18px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+
+    gap: 14px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.primary-btn,
+.secondary-btn,
+.card-btn {
+    border: none;
+
+    border-radius: 10px;
+
+    padding: 13px 22px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: 0.25s;
+}
+
+.primary-btn {
+    background: #2563eb;
+
+    color: white;
+
+    box-shadow:
+        0 8px 20px rgba(37, 99, 235, 0.20);
+}
+
+.primary-btn:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(37, 99, 235, 0.28);
+}
+
+.secondary-btn {
+    background: white;
+
+    color: #2563eb;
+
+    border: 1px solid #bfdbfe;
+}
+
+.secondary-btn:hover {
+    background: #eff6ff;
+
+    transform: translateY(-2px);
+}
+
+.card-btn {
+    margin-top: 15px;
+
+    width: 100%;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+}
+
+.card-btn:hover {
+    background: #2563eb;
+
+    color: white;
+}
+
+
+/* =========================================================
+   COMMON SECTIONS
+========================================================= */
+
+.dashboard-section,
+.features,
+.content-section {
+    width: 100%;
+
+    padding: 85px 7%;
+}
+
+.dashboard-section {
+    background: #ffffff;
+}
+
+.features {
+    background: #f8fafc;
+}
+
+.content-section {
+    background: #f5f7fb;
+}
+
+.section-heading {
+    max-width: 750px;
+
+    margin: 0 auto 45px;
+
+    text-align: center;
+}
+
+.section-label {
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    color: #2563eb;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.section-heading h2 {
+    margin-bottom: 10px;
+
+    color: #172554;
+
+    font-size: clamp(28px, 4vw, 40px);
+
+    line-height: 1.2;
+}
+
+.section-heading p {
+    color: #64748b;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats-container {
+    max-width: 1200px;
+
+    margin: 0 auto 45px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 23px;
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 8px 25px rgba(15, 23, 42, 0.05);
+
+    transition: 0.25s;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 14px 35px rgba(15, 23, 42, 0.09);
+}
+
+.stat-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 13px;
+
+    background: #eff6ff;
+
+    font-size: 25px;
+}
+
+.stat-card h3 {
+    color: #172554;
+
+    font-size: 25px;
+
+    line-height: 1.2;
+}
+
+.stat-card p {
+    margin-top: 3px;
+
+    color: #64748b;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   DASHBOARD CARDS
+========================================================= */
+
+.dashboard-grid {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+.dashboard-card {
+    padding: 28px;
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px rgba(15, 23, 42, 0.05);
+
+    transition: 0.25s;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #bfdbfe;
+
+    box-shadow:
+        0 15px 35px rgba(37, 99, 235, 0.10);
+}
+
+.card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+}
+
+.card-icon {
+    font-size: 30px;
+}
+
+.card-tag {
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 0.8px;
+}
+
+.dashboard-card h3 {
+    margin-bottom: 8px;
+
+    color: #172554;
+
+    font-size: 21px;
+}
+
+.dashboard-card p {
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   MOTIVATION
+========================================================= */
+
+.motivation-card {
+    max-width: 1200px;
+
+    margin: 35px auto 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 25px 28px;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eff6ff,
+            #dbeafe
+        );
+
+    border: 1px solid #bfdbfe;
+}
+
+.motivation-icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 14px;
+
+    background: white;
+
+    font-size: 27px;
+}
+
+.motivation-card h3 {
+    margin-bottom: 4px;
+
+    color: #172554;
+}
+
+.motivation-card p {
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.feature-container {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.feature-card {
+    padding: 30px 24px;
+
+    text-align: center;
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 16px;
+
+    transition: 0.25s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #bfdbfe;
+
+    box-shadow:
+        0 15px 30px rgba(15, 23, 42, 0.08);
+}
+
+.feature-card .icon {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 18px;
+
+    border-radius: 15px;
+
+    background: #eff6ff;
+
+    font-size: 30px;
+}
+
+.feature-card h3 {
+    margin-bottom: 8px;
+
+    color: #172554;
+
+    font-size: 18px;
+}
+
+.feature-card p {
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   CONTENT BOXES
+========================================================= */
+
+.workout-box,
+.calculator-box,
+.nutrition-planner-box,
+.nutrition-tracker-box {
+    width: 100%;
+    max-width: 850px;
+
+    margin: 0 auto 25px;
+
+    padding: 30px;
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px rgba(15, 23, 42, 0.05);
+}
+
+.workout-box label,
+.calculator-box label,
+.nutrition-planner-box label,
+.nutrition-tracker-box label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #334155;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.workout-box select,
+.calculator-box input,
+.calculator-box select,
+.nutrition-planner-box select,
+.nutrition-tracker-box input {
+    width: 100%;
+
+    margin-bottom: 18px;
+
+    padding: 13px 14px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 9px;
+
+    background: white;
+
+    color: #1f2937;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+.workout-box select:focus,
+.calculator-box input:focus,
+.calculator-box select:focus,
+.nutrition-planner-box select:focus,
+.nutrition-tracker-box input:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 4px rgba(37, 99, 235, 0.10);
+}
+
+
+/* =========================================================
+   RESULT CARDS
+========================================================= */
+
+#workoutResult,
+#fitnessResult,
+#progressResult,
+#nutritionSummary,
+#nutritionResult,
+#foodList,
+#nutritionHistory {
+    margin-top: 20px;
+}
+
+.result-card {
+    padding: 22px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 13px;
+
+    margin-bottom: 15px;
+}
+
+.result-card h3,
+.result-card h4 {
+    color: #172554;
+
+    margin-bottom: 10px;
+}
+
+.result-card p {
+    color: #64748b;
+
+    font-size: 14px;
+
+    margin-bottom: 7px;
+}
+
+.result-card ul {
+    margin: 12px 0 15px 20px;
+
+    color: #475569;
+}
+
+.result-card li {
+    margin-bottom: 6px;
+}
+
+.error-card {
+    background: #fef2f2;
+
+    border-color: #fecaca;
+
+    color: #991b1b;
+}
+
+
+/* =========================================================
+   MEAL PLAN
+========================================================= */
+
+.meal-plan-container {
+    max-width: 1200px;
+
+    margin: 0 auto 25px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.meal-card {
+    padding: 25px;
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 16px;
+
+    text-align: center;
+
+    box-shadow:
+        0 8px 20px rgba(15, 23, 42, 0.04);
+
+    transition: 0.25s;
+}
+
+.meal-card:hover {
+    transform: translateY(-4px);
+
+    border-color: #bfdbfe;
+}
+
+.meal-icon {
+    font-size: 34px;
+
+    margin-bottom: 10px;
+}
+
+.meal-card h3 {
+    margin-bottom: 8px;
+
+    color: #172554;
+}
+
+.meal-card p {
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   MEAL CHECKBOXES
+========================================================= */
+
+.meal-check {
+    display: flex !important;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px 0;
+
+    color: #475569 !important;
+
+    font-weight: 600 !important;
+
+    cursor: pointer;
+}
+
+.meal-check input {
+    width: auto !important;
+
+    margin: 0 !important;
+}
+
+
+/* =========================================================
+   PROGRESS BAR
+========================================================= */
+
+.progress-bar {
+    width: 100%;
+
+    height: 22px;
+
+    margin: 15px 0;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #e5e7eb;
+}
+
+.progress-fill {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 30px;
+
+    border-radius: 20px;
+
+    background: linear-gradient(
+        90deg,
+        #2563eb,
+        #3b82f6
+    );
+
+    color: white;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    transition: width 0.5s ease;
+}
+
+
+/* =========================================================
+   RESULT STAT
+========================================================= */
+
+.result-stat {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 14px 0;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.result-stat span {
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+.result-stat strong {
+    color: #172554;
+
+    text-align: right;
+
+    font-size: 15px;
+}
+
+.small-note {
+    margin-top: 15px;
+
+    color: #94a3b8 !important;
+
+    font-size: 12px !important;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    padding: 50px 20px;
+
+    text-align: center;
+
+    background: #172554;
+
+    color: white;
+}
+
+.footer-logo {
+    margin-bottom: 7px;
+
+    font-size: 20px;
+    font-weight: 800;
+}
+
+footer p {
+    margin-bottom: 8px;
+
+    color: #bfdbfe;
+
+    font-size: 14px;
+}
+
+footer small {
+    color: #93c5fd;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .navbar {
+        padding: 15px 4%;
+    }
+
+    .nav-links {
+        gap: 14px;
+    }
+
+    .stats-container {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .feature-container {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .meal-plan-container {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        position: relative;
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        padding: 18px 20px;
+    }
+
+    .nav-links {
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 12px;
+    }
+
+    .hero {
+        min-height: 500px;
+
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .dashboard-section,
+    .features,
+    .content-section {
+        padding: 60px 20px;
+    }
+
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-container {
+        grid-template-columns: 1fr;
+    }
+
+    .meal-plan-container {
+        grid-template-columns: 1fr;
+    }
+
+    .workout-box,
+    .calculator-box,
+    .nutrition-planner-box,
+    .nutrition-tracker-box {
+        padding: 22px;
+    }
+
+    .motivation-card {
+        align-items: flex-start;
+
+        padding: 20px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .nav-links button {
+        padding: 8px 12px;
+
+        font-size: 12px;
+    }
+
+    .hero h1 {
+        font-size: 31px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        width: 100%;
+    }
+
+    .section-heading h2 {
+        font-size: 27px;
+    }
+
+}

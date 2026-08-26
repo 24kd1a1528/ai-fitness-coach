@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AI Fitness Coach - Sign Up</title>
+
+    <!-- SIGNUP CSS -->
+    <link rel="stylesheet" href="signup.css">
+
+</head>
+
+
+<body>
+
+    <div class="signup-page">
+
+        <div class="signup-container">
+
+
+            <!-- =================================================
+                 LEFT SIDE
+            ================================================== -->
+
+            <div class="signup-left">
+
+                <div class="signup-brand-icon">
+                    🤖
+                </div>
+
+                <h1>
+                    AI Fitness Coach
+                </h1>
+
+                <p>
+                    Start your personalized fitness journey
+                    with your intelligent fitness companion.
+                </p>
+
+
+                <div class="signup-features">
+
+                    <div class="signup-feature">
+                        💪
+                        <span>
+                            Personalized Workout Plans
+                        </span>
+                    </div>
+
+                    <div class="signup-feature">
+                        🥗
+                        <span>
+                            Nutrition Guidance
+                        </span>
+                    </div>
+
+                    <div class="signup-feature">
+                        🧮
+                        <span>
+                            BMI & Calorie Analysis
+                        </span>
+                    </div>
+
+                    <div class="signup-feature">
+                        📊
+                        <span>
+                            Fitness Progress Tracking
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 RIGHT SIDE
+            ================================================== -->
+
+            <div class="signup-right">
+
+                <h2>
+                    Create Account 🚀
+                </h2>
+
+                <p class="signup-subtitle">
+                    Join AI Fitness Coach and start your journey today.
+                </p>
+
+
+                <form id="signupForm">
+
+
+                    <!-- NAME -->
+
+                    <div class="signup-input-group">
+
+                        <label for="name">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- EMAIL -->
+
+                    <div class="signup-input-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+
+                    <div class="signup-input-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Create a password"
+                            minlength="8"
+                            maxlength="20"
+                            required
+                        >
+
+                        <small style="color: #666;">
+                            Password must be 8–20 characters.
+                        </small>
+
+                    </div>
+
+
+                    <!-- BUTTON -->
+
+                    <button
+                        type="submit"
+                        class="signup-btn"
+                    >
+                        Create Account
+                    </button>
+
+
+                    <!-- MESSAGE -->
+
+                    <div id="signupMessage"></div>
+
+                    <p id="message"></p>
+
+                </form>
+
+
+                <!-- LOGIN -->
+
+                <p class="login-text">
+
+                    Already have an account?
+
+                    <a href="login.html">
+                        Login
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         SIGNUP JAVASCRIPT
+    ================================================== -->
+
+    <script>
+
+        document
+            .getElementById("signupForm")
+            .addEventListener("submit", async function(event) {
+
+                event.preventDefault();
+
+
+                const name =
+                    document.getElementById("name").value.trim();
+
+                const email =
+                    document.getElementById("email").value.trim();
+
+                const password =
+                    document.getElementById("password").value;
+
+                const message =
+                    document.getElementById("message");
+
+
+                /* ==========================================
+                   PASSWORD LENGTH VALIDATION
+                ========================================== */
+
+                if (password.length < 8 || password.length > 20) {
+
+                    message.textContent =
+                        "Password must be between 8 and 20 characters.";
+
+                    message.style.color =
+                        "#dc2626";
+
+                    return;
+                }
+
+
+                /* ==========================================
+                   SEND SIGNUP REQUEST
+                ========================================== */
+
+                try {
+
+                    const response = await fetch(
+                        "http://localhost:5000/api/signup",
+                        {
+                            method: "POST",
+
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+
+                            body: JSON.stringify({
+                                name: name,
+                                email: email,
+                                password: password
+                            })
+                        }
+                    );
+
+
+                    const data =
+                        await response.json();
+
+
+                    if (data.success) {
+
+                        message.textContent =
+                            "Account created successfully!";
+
+                        message.style.color =
+                            "#16a34a";
+
+
+                        setTimeout(() => {
+
+                            window.location.href =
+                                "login.html";
+
+                        }, 1000);
+
+
+                    } else {
+
+                        message.textContent =
+                            data.message || "Signup failed.";
+
+                        message.style.color =
+                            "#dc2626";
+
+                    }
+
+
+                } catch (error) {
+
+                    console.error(error);
+
+                    message.textContent =
+                        "Unable to connect to server.";
+
+                    message.style.color =
+                        "#dc2626";
+
+                }
+
+            });
+
+    </script>
+
+</body>
+
+</html>
